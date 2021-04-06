@@ -13,7 +13,8 @@ class App extends React.Component{
   constructor(){
     super()
     this.state={
-      items:[]
+      items:[],
+      searchfield:''
     }
   }
   componentDidMount(){
@@ -27,15 +28,23 @@ class App extends React.Component{
       .then(data => {this.setState({ items: data.items})})
   }
 
+  onSearchchange = (e) =>{
+    this.setState({searchfield:e.target.value})
+  }
+
   render(){
     const items = this.state.items
+    const searchfield = this.state.searchfield
+    const filtereditems = items.filter(item =>{
+      return item.name.toLowerCase().includes(searchfield.toLowerCase());
+    })
     // console.log("render")
     return (
       <div className="App">
         <Router>
           <Navbar />
           <Switch>
-            <Route exact path="/"> <HomePage items={items} /> </Route>
+            <Route exact path="/"> <HomePage items={filtereditems} searchChange={this.onSearchchange}/> </Route>
             <Route exact path="/deals"> <DealsPage items={items.filter(item=>item.isOnSale)} /> </Route>
             <Route exact path='/cart'> <CartPage /> </Route> 
             <Route exact path='/item/:itemId' component={ItemPage} />  
