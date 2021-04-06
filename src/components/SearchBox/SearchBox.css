@@ -1,0 +1,15 @@
+.pa2 {
+    /* padding: var(--spacing-small); */
+    padding: 10px 0px 0px 0px;
+}
+
+.pa3 { 
+    /* padding: var(--spacing-medium); */
+    padding: 10px;
+ }
+
+.ba { border-style: solid; border-width: 1px; }
+
+.b--green { border-color: var(--green); }
+
+.bg-lightest-blue { background-color: #CDECFF }
