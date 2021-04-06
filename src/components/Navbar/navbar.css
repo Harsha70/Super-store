@@ -1,0 +1,38 @@
+.navbar {
+	background-color: #013d55;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+}
+
+.navbar a {
+	color: white;
+	text-decoration: none;
+}
+.navbar .links {
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+}
+.navbar .links a {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.selected {
+	border-bottom: solid 1.5px orange;
+}
+
+#signin {
+	background-color: orange;
+	padding: 5px 15px;
+	font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+	.navbar .links {
+		width: 60%;
+	}
+}

@@ -1,0 +1,34 @@
+.cardWrapper {
+	padding: 20px 25px 50px 25px;
+	border: solid 1px;
+}
+.cardWrapper a{
+	text-decoration: none;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 300px;
+	margin-bottom: 20px;
+}
+.cardIntro {
+	text-align: left;
+	font-size: 20px;
+}
+.cardImg {
+	margin: 0 auto;
+	height: 200px;
+}
+
+.viewBtn {
+	text-align: center;
+	margin: 0 auto;
+	cursor: pointer;
+	background-color: orange;
+	color: white;
+	font-weight: bold;
+	width: 120px;
+	padding: 10px;
+}

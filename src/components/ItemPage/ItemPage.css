@@ -1,0 +1,70 @@
+.item-container {
+	display: flex;
+    text-align: initial;
+	width: 75%;
+	margin: 20px auto;
+    justify-content: center;
+}
+
+div.item-container > div {
+	padding: 0 15px;
+}
+
+.itemImg img {
+	max-height: 400px;
+}
+
+.itemText h1 {
+	font-weight: 600;
+}
+.itemText .intro {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.itemText .price {
+	font-size: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.num-bg {
+	text-align: center;
+	width: 50px;
+	border: none;
+	outline: none;
+	background-color: rgba(128, 128, 128, 0.418);
+	padding: 5px 1px 5px 3px;
+}
+
+.invalid{
+	padding-left: 10px;
+    color: crimson;
+    font-size: large;
+}
+
+.insufficient{
+	padding: 10px 0px 0px 10px;
+    color: crimson;
+    font-size: large;
+}
+
+.add-btn {
+	margin-top: 20px;
+	text-align: center;
+	cursor: pointer;
+	background-color: rgb(255, 174, 23);
+	color: white;
+	width: 120px;
+	padding: 5px 10px 5px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .item-container {
+        width: 90%;
+        flex-direction: column;
+    }
+	.itemText{
+		max-width: none;
+	}
+}
