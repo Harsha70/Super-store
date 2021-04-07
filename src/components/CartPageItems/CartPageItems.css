@@ -1,0 +1,30 @@
+.cartImg{
+    margin: 0px auto;
+    height: 80px;
+}
+
+.cartItems{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+.titleprice{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    text-align: initial;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.arrow {
+    cursor: pointer;
+    padding-right: 10px;
+  }
+
+.value{
+    padding-right: 10px;
+}
+
