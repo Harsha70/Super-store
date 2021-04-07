@@ -2,7 +2,10 @@
 import { NavLink as Link } from 'react-router-dom';
 import './navbar.css'
 
-const Navbar = () => {
+import { connect } from 'react-redux';
+
+
+const Navbar = ({noofcartItems}) => {
     return (
         <div className="navbar">
             <div>
@@ -11,12 +14,16 @@ const Navbar = () => {
             <div className="links">
                 <Link to="/"  activeClassName="selected" exact>Home</Link>
                 <Link to="/deals" activeClassName="selected">Deals</Link>
-                <Link to="/cart" activeClassName="selected">Cart</Link>
+                <Link to="/cart" activeClassName="selected">Cart({noofcartItems})</Link>
                 <Link to="/"><span id="signin">Sign In</span></Link>
             </div>
         </div>
     )
 }
 
+const mapStateToProps = (state) => {
+    return({
+    noofcartItems:state.cart.cartItems.length
+});}
 
-export default Navbar;
+export default connect(mapStateToProps)(Navbar);

@@ -2,11 +2,14 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import default_img from '../../images/product-default-img.jpg';
 
+import { connect } from "react-redux";
+import { addItem } from "../../redux/cart/cart.action";
+
 import './ItemPage.css'
 
 import Rating from '../Rating/Rating';
 
-export default function ItemPage({match}) {
+const ItemPage= ({match, addItem}) => {
     const [state, setstate] = useState({'item':[],'quantity':1,'invalid':false,'instock':true})
     useEffect(() => {
         async function fetchData() {
@@ -30,7 +33,7 @@ export default function ItemPage({match}) {
 
     // console.log(quantity)
     const handleChange = (e)=>{
-        const stock = e.target.value<=state['item']['stockCount']
+        const stock = e.target.value <= state['item']['stockCount']
         if (e.target.value>=1){
             setstate({...state,"quantity":Number(e.target.value),"invalid":false,"instock":stock})
         } else{
@@ -38,6 +41,7 @@ export default function ItemPage({match}) {
         }   
     }
 
+    const item = state['item']
     const quantity = state['quantity']
     const invalid = state['invalid']
     const instock = state['instock']
@@ -59,8 +63,14 @@ export default function ItemPage({match}) {
                     {invalid && <p className="invalid">Invalid</p>}
                 </div>
                 {instock?<></>:<p className="insufficient">Out of Stock</p>}
-                <div className="add-btn">Add to Cart</div>
+                <div className="add-btn" onClick={()=>addItem({item,quantity})}>Add to Cart</div>
             </div>
         </div>
     );
 }
+
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(ItemPage)

@@ -4,6 +4,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 
 import HomePage from './components/HomePage/HomePage'
 import DealsPage from './components/DealsPage/DealsPage'
+import Checkout from './components/Checkout/Checkout';
 import CartPage from './components/CartPage/CartPage'
 
 import ItemPage from './components/ItemPage/ItemPage'
@@ -48,6 +49,7 @@ class App extends React.Component{
             <Route exact path="/deals"> <DealsPage items={items.filter(item=>item.isOnSale)} /> </Route>
             <Route exact path='/cart'> <CartPage /> </Route> 
             <Route exact path='/item/:itemId' component={ItemPage} />  
+            <Route exact path='/checkout' component={Checkout} />  
           </Switch>
         </Router>
       </div>
