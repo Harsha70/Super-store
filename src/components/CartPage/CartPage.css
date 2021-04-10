@@ -4,3 +4,15 @@
 	font-weight: 600;
 	cursor: pointer;
 }
+
+.cartpagewrapper {
+	width: 50%;
+	display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+	.cartpagewrapper {
+		width: 80%;
+		display: inline-block;
+	}
+}
