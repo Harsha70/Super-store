@@ -32,6 +32,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+	.title{
+		font-size: small;
+	}
 	.navbar .links {
 		width: 60%;
 	}

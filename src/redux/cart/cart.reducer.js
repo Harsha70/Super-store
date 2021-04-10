@@ -1,7 +1,9 @@
+const storage = localStorage.getItem('state')	? JSON.parse(localStorage.getItem('state')).cart.cartItems	: [];
 const INITIAL_STATE = {
-    cartItems:[]
+    
+    cartItems:storage
 }
-
+// const initialState = { cartItems: storage, ...sumItems(storage) };
 const cartReducer = (state= INITIAL_STATE, action) => {
     // let cartItemToAdd = action.payload
     // console.log(cartItemToAdd)
