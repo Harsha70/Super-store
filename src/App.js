@@ -6,6 +6,7 @@ import HomePage from './components/HomePage/HomePage'
 import DealsPage from './components/DealsPage/DealsPage'
 import Checkout from './components/Checkout/Checkout';
 import CartPage from './components/CartPage/CartPage'
+import Myorders from './components/Myorders/Myorders'
 
 import ItemPage from './components/ItemPage/ItemPage'
 
@@ -40,6 +41,7 @@ class App extends React.Component{
       return item.name.toLowerCase().includes(searchfield.toLowerCase());
     })
     // console.log("render")
+    console.log(process.env)
     return (
       <div className="App">
         <Router>
@@ -50,6 +52,7 @@ class App extends React.Component{
             <Route exact path='/cart'> <CartPage /> </Route> 
             <Route exact path='/item/:itemId' component={ItemPage} />  
             <Route exact path='/checkout' component={Checkout} />  
+            <Route exact path='/myorders' component={Myorders} />  
           </Switch>
         </Router>
       </div>

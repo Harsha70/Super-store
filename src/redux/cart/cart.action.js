@@ -17,3 +17,7 @@ export const remove = item => ({
     type: "REMOVE",
     payload: item
 })
+
+export const empty = () => ({
+    type: "EMPTY",
+})
