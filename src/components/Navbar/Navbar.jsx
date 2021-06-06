@@ -15,6 +15,7 @@ const Navbar = ({noofcartItems}) => {
                 <Link to="/"  activeClassName="selected" exact className="line title">Home</Link>
                 <Link to="/deals" activeClassName="selected" className="line title">Deals</Link>
                 <Link to="/cart" activeClassName="selected" className="line title">Cart({noofcartItems})</Link>
+                <Link to="/myorders" activeClassName="selected" className="line title">My Orders</Link>
                 <Link to="/"><span id="signin" className="line title">Sign In</span></Link>
             </div>
         </div>
