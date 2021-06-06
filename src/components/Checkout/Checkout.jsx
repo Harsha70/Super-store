@@ -19,7 +19,7 @@ const Checkout = ({cartItems, price, empty, addOrders}) => {
             items:cartItems
         }
         const options = {
-			key: domain ? process.env.REACT_APP_KEY : 'PRODUCTION_KEY',
+			key: domain ? process.env.REACT_APP_KEY : process.env.REACT_APP_KEY,
 			currency: 'INR',
 			amount: price*100,
 			name: 'Purchasing',
